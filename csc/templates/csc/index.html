@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+
+
+
+<!-- contents -->
+{% block content %}
+
+<div class="hero-slide owl-carousel site-blocks-cover">
+    <div class="intro-section" style="background-image: url('');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+                    <h2>Evangel University Akaeze</h2>
+                    <h1>Computer Science Department.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<div></div>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+
+                <div class="feature-1 border">
+                    <div class="icon-wrapper bg-primary">
+                        <span class="flaticon-mortarboard text-white"></span>
+                    </div>
+                    <div class="feature-1-content">
+                        <h2>Admission Requirements</h2>
+                        <p>Admission requirements for computer science department</p>
+                        <p><a href="{% url 'admission' %}" class="btn btn-primary px-4 rounded-0"
+                                style="background-color: #1d4f2d !important;">View More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <div class="feature-1 border">
+                    <div class="icon-wrapper bg-primary">
+                        <span class="flaticon-school-material text-white"></span>
+                    </div>
+                    <div class="feature-1-content">
+                        <h2>Course Modules</h2>
+                        <p>List of course modules for computer science department</p>
+                        <p><a href="{% url 'course_module' %}" class="btn btn-primary px-4 rounded-0"
+                                style="background-color: #1d4f2d !important;">View More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <div class="feature-1 border">
+                    <div class="icon-wrapper bg-primary">
+                        <span class="flaticon-library text-white"></span>
+                    </div>
+                    <div class="feature-1-content">
+                        <h2>Staff Profiles</h2>
+                        <p>List of staffs in Evangel University Akaeze computer science department</p>
+                        <p><a href="{% url 'staff_profile' %}" class="btn btn-primary px-4 rounded-0"
+                                style="background-color: #1d4f2d !important;">View More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2 class="section-title-underline style-2">
+                    <span>Welcome</span>
+                </h2>
+            </div>
+            <div class="col-lg-8">
+                <p>The Computer Science discipline is unique because it provides a focus for convergence of
+                    technologies. Its uniqueness naturally defines its role and dictates its increasing relevance in
+                    several disciplines and modern practices and techniques. The scope of application of computer
+                    science in the modern scientific and technological context is, therefore, infinitely wide.
+                    Students
+                    are equipped in the Department and are thus encouraged to function, research and engage in
+                    collaborative projects in wide professional contexts.</p>
+                <!-- <p><a href="about.html">Read more</a></p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

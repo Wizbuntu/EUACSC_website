@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<!-- contents -->
+{% block content %}
+
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('images/bg_1.jpg')">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-7">
+                <h2 class="mb-0">Ebooks</h2>
+                <p>Click to preview and download any computer science ebook.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--            Search -->
+<div class="container mt-4">
+
+    <form class="form-inline" method="GET">
+        <div class="form-group mx-sm-3 mb-2">
+            {{ form }}
+
+            </fieldset>
+            <!-- <input type="text" class="form-control" id="inputPassword2" placeholder="Search Book..."> -->
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>
+
+</div>
+
+<!--            Book Card Layout Section-->
+<section>
+    <div class="container mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-12 col-sm-12 col-lg-10">
+                    {% for object in object_list %}
+                    <ul class="list-group mt-3">
+                        <a href="{{ object.download_link }}"
+                            class="list-group-item list-group-item-action d-flex align-items-center">
+                            <div class="image-parent mr-5">
+                                <img src="{{ object.image.url }}" alt="quixote" style="max-width: 80px;">
+                            </div>
+                            <div class="flex-column">
+                                {{ object.title }}
+                                <p><small>{{ object.author }}</small></p>
+                                <span class="badge badge-info badge-pill">Download</span>
+                            </div>
+
+                        </a>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--            Pagination-->
+<div class="container" style="margin-top: 80px !important;">
+    <nav aria-label="...">
+
+        {% if is_paginated %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            {% endif %}
+            {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+            <li class="page-item active">
+                <a class="page-link" href="#">{{ i }} <span class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </nav>
+</div>
+
+
+{% endblock %}
